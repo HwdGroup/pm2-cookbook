@@ -15,7 +15,7 @@ NODE_VERSION = node['pm2']['node_version']
 
 # Install node packages
 %w(pm2).each do |pkg|
-  node_package pkg do
+  nodejs_npm pkg do
     version node['pm2']["#{pkg}_version"] unless node['pm2']["#{pkg}_version"].nil?
   end
 end
